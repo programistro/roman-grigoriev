@@ -54,7 +54,6 @@ onMounted(async () => {
         </div>
       </div>
     </Transition>
-
   </div>
 
     <UApp>
@@ -62,7 +61,10 @@ onMounted(async () => {
     <UHeader>
       <template #left>
         <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
+          <!-- <AppLogo class="w-auto h-6 shrink-0" /> -->
+           <UHeaderTitle class="text-lg font-semibold">
+            Roman Grigoriev
+          </UHeaderTitle>
         </NuxtLink>
 
         <TemplateMenu />
@@ -72,7 +74,7 @@ onMounted(async () => {
         <UColorModeButton />
 
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://github.com/programistro"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"

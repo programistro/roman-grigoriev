@@ -36,8 +36,8 @@
           delay: index * 0.1
         }">
         <NuxtImg
-          width="234"
-          height="234"
+          width="334"
+          height="334"
           class="rounded-lg aspect-square object-cover"
           :class="index % 2 === 0 ? '-rotate-2' : 'rotate-2'"
           v-bind="img"
