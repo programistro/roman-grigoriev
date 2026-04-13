@@ -25,6 +25,8 @@ export default defineContentConfig({
           title: z.string(),
           description: z.string()
         }),
+        title: z.string(),
+        description: z.string(),
         hero: z.object({
           links: z.array(createButtonSchema()),
           images: z.array(createImageSchema())
@@ -32,6 +34,19 @@ export default defineContentConfig({
         about: z.object({
           title: z.string(),
           description: z.string()
+        }),
+        experience: z.object({
+          title: z.string(),
+          items: z.array(z.object({
+            position: z.string(),
+            date: z.string(),
+            company: z.object({
+              name: z.string(),
+              logo: z.string(),
+              url: z.string(),
+              color: z.string()
+            })
+          }))
         }),
         testimonials: z.array(z.object({
           quote: z.string(),
@@ -44,6 +59,21 @@ export default defineContentConfig({
         blog: z.object({
           title: z.string(),
           description: z.string()
+        }),
+        faq: z.object({
+          title: z.string(),
+          description: z.string(),
+          categories: z.array(
+            z.object({
+              title: z.string(),
+              questions: z.array(
+                z.object({
+                  label: z.string(),
+                  content: z.string()
+                })
+              )
+            })
+          )
         })
       })
     }),
