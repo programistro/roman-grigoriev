@@ -1,13 +1,13 @@
 seo:
   title: "Fullstack Developer Portfolio - Roman Grigoriev"
   description: "Welcome to my portfolio! I'm Emma Thompson, a UX/UI designer and front-end developer based in Boston. I specialize in creating user-centered digital experiences that are both beautiful and functional."
-title: "Hey, I'm Emma Thompson UX/UI Designer"
-description: "I craft intuitive digital experiences where design meets functionality. Based in Boston, bringing ideas to life through code and creativity."
+title: "Привет, я Роман, Fullstack разработчик!"
+description: "Я создаю веб приложение на Vue js + ASP.NET, а так же мобильные приложения для Android на Kotlin."
 hero:
   links:
-    - label: "Use this template"
-      to: https://github.com/programistro
-      color: "neutral"
+    # - label: "Use this template"
+    #   to: https://github.com/programistro
+    #   color: "neutral"
   images:
     - src: /works/eleven.webp
       alt: eleven-island
@@ -20,32 +20,32 @@ hero:
     - src: /works/trampline-main.png
       alt: trampline-main
 about:
-  title: "About Me"
+  title: "Обо мне"
   description: |
-    Я бекенд разработчик с 3 летним комерческим опытом. За это время я успел поработать в нескольких компаниях, таких как Sber, Tinkoff и других. Я специализируюсь на разработке высоконагруженных систем и оптимизации производительности. Мой опыт включает в себя работу с различными технологиями, такими как Java, Spring Boot, Kafka и другими. Я всегда стремлюсь к профессиональному развитию и открыт для новых возможностей.
+    Я бекенд разработчик с 3 летним комерческим опытом. За это время я успел поработать в нескольких компаниях.Я специализируюсь на разработке высоконагруженных систем и оптимизации производительности.
 experience:
-  title: Work Experience
+  title: Опыт работы
   items:
     - position: "Фриланс"
-      date: "2023 - Present"
+      date: "2023 - Настоящие время"
       company:
         name: Kwork
         logo: "i-simple-icons-nuxtdotjs"
         url: "https://kwork.ru/users/programistro"
         color: "#00DC82"
-    - position: "Assets Designer at"
-      date: "2022 - 2023"
+    - position: "Маркет Эксперт"
+      date: "2025 - 2026"
       company:
         name: Raycast
         logo: "i-simple-icons-raycast"
         url: "https://raycast.com"
         color: "#FF6363"
-    - position: "Senior UX/UI Designer at"
-      date: "2020 - 2021"
+    - position: "Atlant AI"
+      date: "2025 - 2026"
       company:
-        name: Linear
-        logo: "i-simple-icons-linear"
-        url: "https://linear.app"
+        name: AtlantAI
+        logo: "i-lucide-brain"
+        url: "https://atlantai.app/en"
         color: "#5E6AD2"
 testimonials:
   - quote: "Заказ был выполнен в кратчайшие сроки, исполнитель ответственный, отвечает на все возникающие вопросы,  результатом довольна, советую"

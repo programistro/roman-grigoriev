@@ -52,12 +52,14 @@
       id="about"
       :title="page.about.title"
       :description="page.about.description"
+      class="py-18"
     />
 
     <UPageSection
       v-if="page.experience"
       id="experience"
       :title="page.experience.title"
+      class="py-8"
     >
       <div class="space-y-4">
         <div
