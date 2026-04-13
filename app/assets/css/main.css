@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Public Sans', sans-serif;
+
+ --color-black-50:  #f8f9fa;  /* почти белый */
+  --color-black-100: #f1f3f4;
+  --color-black-200: #e8eaed;
+  --color-black-300: #d7d9dd;
+  --color-black-400: #b8bbbe;
+  --color-black-500: #9aa0a6;
+  --color-black-600: #80868b;
+  --color-black-700: #5f6368;
+  --color-black-800: #3c4043;
+  --color-black-900: #000000;
+  --color-black-950: #000000;  /* чистый чёрный */
+
+  --color-white-50:  #ffffff;
+  --color-white-100: #ffffff;
+  --color-white-200: #ffffff;
+  --color-white-300: #ffffff;
+  --color-white-400: #f8f9fa;
+  --color-white-500: #f1f3f4;
+  --color-white-600: #e8eaed;
+  --color-white-700: #e0e3e6;
+  --color-white-800: #d2d6db;
+  --color-white-900: #bdc1c6;
+  --color-white-950: #9aa0a6;
+
+  /* Градиентный акцент (фиолетово-розовый из вашего скрина) */
+  --color-gradient-50:  #f3e8ff;
+  --color-gradient-100: #e9d5ff;
+  --color-gradient-200: #d896ff;
+  --color-gradient-300: #c458ff;
+  --color-gradient-400: #a01aff;
+  --color-gradient-500: #8b00ff;
+  --color-gradient-600: #7a00e6;
+  --color-gradient-700: #6900cc;
+  --color-gradient-800: #5700b3;
+  --color-gradient-900: #3f0077;
+  --color-gradient-950: #2d004e;
+}
