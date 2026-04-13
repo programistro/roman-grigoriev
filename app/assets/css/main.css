@@ -41,3 +41,20 @@
   --color-gradient-900: #3f0077;
   --color-gradient-950: #2d004e;
 }
+
+/* Анимация лоадера */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Анимация курсора */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

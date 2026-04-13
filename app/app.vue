@@ -22,10 +22,42 @@ useSeoMeta({
   ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
   twitterCard: 'summary_large_image'
 })
+
+const loading = ref(true)
+const displayedText = ref('')
+const fullText = 'Hello World!'
+const typingSpeed = 100 // мс на символ
+
+// Анимация печатания текста
+onMounted(async () => {
+  for (let i = 0; i <= fullText.length; i++) {
+    displayedText.value = fullText.slice(0, i)
+    await new Promise(resolve => setTimeout(resolve, typingSpeed))
+  }
+  
+  // Ждём после завершения печати
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  loading.value = false
+})
 </script>
 
 <template>
-  <UApp>
+  <div>
+    <!-- Лоадер при загрузке -->
+    <Transition name="fade">
+      <div v-if="loading" class="fixed inset-0 z-50 flex items-center justify-center bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm">
+        <div class="flex flex-col items-center gap-6">
+          <!-- Печатающийся текст -->
+          <div class="text-3xl font-bold text-primary-500">
+            {{ displayedText }}<span class="animate-pulse">|</span>
+          </div>
+        </div>
+      </div>
+    </Transition>
+
+  </div>
+
+    <UApp>
 
     <UHeader>
       <template #left>
@@ -54,18 +86,18 @@ useSeoMeta({
       <NuxtPage />
     </UMain>
 
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
+    <USeparator/>
 
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+          Roman Grigoriev • © {{ new Date().getFullYear() }}
         </p>
       </template>
 
       <template #right>
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://github.com/programistro"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
