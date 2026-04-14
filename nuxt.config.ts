@@ -5,7 +5,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxt/content',
-    'motion-v/nuxt' 
+    'motion-v/nuxt' ,
+    '@nuxt/eslint'
   ],
 
  devServer: {

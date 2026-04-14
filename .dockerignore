@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+.pnpm
+
+# Build
+.nuxt
+.output
+
+# Git
+.git
+.gitignore
+
+# Environment
+.env
+.env.*
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Tests
+coverage
+*.test.ts
+*.spec.ts
+
+# Misc
+*.md
+LICENSE
+renovate.json
+.eslintignore
+.eslintrc*

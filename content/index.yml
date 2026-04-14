@@ -19,6 +19,8 @@ hero:
       alt: trampline-map
     - src: /works/trampline-main.png
       alt: trampline-main
+    - src: /works/prof.png
+      alt: trampline-main
   skills:
     - name: "ASP.NET"
       icon: "i-simple-icons-dotnet"
@@ -38,6 +40,8 @@ hero:
       icon: "i-simple-icons-docker"
     - name: "C#"
       icon: "i-simple-icons-csharp"
+    - name: "Blazor"
+      icon: "i-simple-icons-blazor"
     - name: "RabbitMq"
       icon: "i-simple-icons-rabbitmq"
     - name: "CI/CD"
@@ -45,6 +49,7 @@ hero:
     - name: "Fluent Validation"
     - name: "DDD"
     - name: "DRY"
+    - name: "LNIQ"
     - name: "KISS"
     - name: "SOLID"
       icon: "i-simple-icons-solid"
