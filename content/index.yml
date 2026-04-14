@@ -68,7 +68,7 @@ hero:
 about:
   title: "Обо мне"
   description: |
-    Я бекенд разработчик с 3 летним комерческим опытом. За это время я успел поработать в нескольких компаниях.Я специализируюсь на разработке высоконагруженных систем и оптимизации производительности.
+    Я бекенд разработчик с 3 летним комерческим опытом. За это время я успел поработать в нескольких компаниях. Я специализируюсь на разработке высоконагруженных систем и оптимизации производительности.
 experience:
   title: Опыт работы
   items:
@@ -77,14 +77,14 @@ experience:
       company:
         name: Kwork
         logo: "i-simple-icons-nuxtdotjs"
-        url: "https://kwork.ru/users/programistro"
+        url: "https://kwork.ru"
         color: "#00DC82"
     - position: "Маркет Эксперт"
       date: "2025 - 2026"
       company:
         name: Raycast
         logo: "i-simple-icons-raycast"
-        url: "https://raycast.com"
+        url: "https://marketexpert.ru/"
         color: "#FF6363"
     - position: "Atlant AI"
       date: "2025 - 2026"
