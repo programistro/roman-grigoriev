@@ -14,6 +14,10 @@ const createImageSchema = () => z.object({
   alt: z.string()
 })
 
+const createSkillSchema = () => z.object({
+  name: z.string(),
+})
+
 export default defineContentConfig({
   collections: {
     // Главная страница
@@ -29,7 +33,8 @@ export default defineContentConfig({
         description: z.string(),
         hero: z.object({
           links: z.array(createButtonSchema()),
-          images: z.array(createImageSchema())
+          images: z.array(createImageSchema()),
+          skills: z.array(createSkillSchema()).optional()
         }),
         about: z.object({
           title: z.string(),

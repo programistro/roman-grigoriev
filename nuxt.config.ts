@@ -8,6 +8,10 @@ export default defineNuxtConfig({
     'motion-v/nuxt' 
   ],
 
+ devServer: {
+    port: 3003,
+  },
+
   devtools: {
     enabled: true
   },

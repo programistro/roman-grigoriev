@@ -55,6 +55,36 @@
       class="py-0"
     />
 
+     <UMarquee
+      class="py-0 -mx-8 sm:-mx-12 lg:-mx-0 [--duration:30s] gap-0">
+      <Motion
+        v-for="(img, index) in page.hero.skills"
+        :key="index"
+        :initial="{
+          scale: 1.1,
+          opacity: 0,
+          filter: 'blur(20px)'
+        }"
+        :animate="{
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }"
+        :transition="{
+          duration: 0.6,
+          delay: index * 0.1
+        }"
+      >
+        <UButton
+          :icon="img.icon || 'i-lucide-code'"
+          :label="img.name"
+          color="primary"
+          variant="soft"
+          size="md"
+        />
+      </Motion>
+    </UMarquee>
+
     <UPageSection
       v-if="page.experience"
       id="experience"
@@ -131,9 +161,9 @@
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <!-- Контакты -->
-      <div class="space-y-4">
-        <p class="text-gray-600 dark:text-gray-400">
-          Напишите мне или свяжитесь через социальные сети.
+      <div class="space-y-4 text-center">
+        <p class="text-gray-600 dark:text-gray-400 whitespace-pre-line">
+          Коннект со мной
         </p>
         
         <div class="space-y-3">
@@ -145,7 +175,7 @@
             color="primary"
             variant="outline"
             size="lg"
-            class="justify-start"
+            class="mx-auto w-full max-w-xs"
           />
           <br>
           <UButton
@@ -156,7 +186,7 @@
             color="primary"
             variant="outline"
             size="lg"
-            class="justify-start"
+            class="mx-auto w-full max-w-xs"
           />
           <br>
           <UButton
@@ -167,15 +197,15 @@
             color="neutral"
             variant="outline"
             size="lg"
-            class="justify-start"
+            class="mx-auto w-full max-w-xs"
           />
         </div>
       </div>
       
       <!-- Форма -->
-      <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
+      <UForm :schema="schema" :state="state" class="space-y-4 mx-auto max-w-md" @submit="onSubmit">
         <UFormField label="Почта" name="email">
-         <UInput v-model="state.email" size="xl" placeholder="your.email@example.com"/>
+         <UInput required v-model="state.email" size="xl" placeholder="your.email@example.com"/>
         </UFormField>
 
        <UFormField label="Имя" name="name">
@@ -249,9 +279,20 @@ useSeoMeta({
 import * as z from 'zod'
 import type { FormSubmitEvent } from '@nuxt/ui'
 
+// Настройка глобальных сообщений ошибок Zod
+z.setErrorMap((issue, ctx) => {
+  if (issue.code === 'too_small' && issue.type === 'string') {
+    return { message: 'Поле обязательно для заполнения' }
+  }
+  if (issue.code === 'invalid_string' && issue.validation === 'email') {
+    return { message: 'Неверный формат почты' }
+  }
+  return { message: ctx.defaultError }
+})
+
 const schema = z.object({
   name: z.string().min(2, 'Имя должно быть не менее 2 символов'),
-  email: z.string().email('Неверный формат почты'),
+  email: z.string().email(),
   message: z.string(),
   phone: z.string().regex(/^\+7\d{10}$/, 'Неверный формат телефона').optional()
 })
