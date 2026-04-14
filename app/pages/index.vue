@@ -78,8 +78,39 @@
         <UButton
           :icon="img.icon || 'i-lucide-code'"
           :label="img.name"
-          color="primary"
-          variant="soft"
+          color="neutral"
+          variant="outline"
+          size="md"
+        />
+      </Motion>
+    </UMarquee>
+
+    <UMarquee
+      class="py-4 -mx-8 sm:-mx-12 lg:-mx-0 [--duration:30s] gap-0" reverse
+    >
+      <Motion
+        v-for="(img, index) in page.hero.skills"
+        :key="`rev-${index}`"
+        :initial="{
+          scale: 1.1,
+          opacity: 0,
+          filter: 'blur(20px)'
+        }"
+        :animate="{
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }"
+        :transition="{
+          duration: 0.6,
+          delay: index * 0.1
+        }"
+      >
+        <UButton
+          :icon="img.icon || 'i-lucide-code'"
+          :label="img.name"
+          color="neutral"
+          variant="outline"
           size="md"
         />
       </Motion>

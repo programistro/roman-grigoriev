@@ -26,6 +26,8 @@ hero:
       icon: "i-simple-icons-kotlin"
     - name: "Apache"
       icon: "i-simple-icons-apache"
+    - name: "Minio"
+      icon: "i-simple-icons-minio"
     - name: "Android"
       icon: "i-simple-icons-android"
     - name: "Git"
@@ -56,8 +58,8 @@ hero:
       icon: "i-simple-icons-html5"
     - name: "CSS"
       icon: "i-simple-icons-css3"
-    - name: "Tailwind CSS"
-      icon: "i-simple-icons-nuxtdotjs"
+    - name: "Tailwind"
+      icon: "i-simple-icons-tailwindcss"
 about:
   title: "Обо мне"
   description: |
