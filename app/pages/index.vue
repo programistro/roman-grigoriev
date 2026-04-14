@@ -52,14 +52,14 @@
       id="about"
       :title="page.about.title"
       :description="page.about.description"
-      class="py-18"
+      class="py-0"
     />
 
     <UPageSection
       v-if="page.experience"
       id="experience"
       :title="page.experience.title"
-      class="py-8"
+      class="py-0"
     >
       <div class="space-y-4">
         <div
@@ -122,6 +122,82 @@
       </UCarousel>
     </UPageSection>
 
+
+    <UPageSection
+      v-if="page.testimonials?.length"
+      id="contact"
+      title="Связаться со мной"
+    >
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Контакты -->
+      <div class="space-y-4">
+        <p class="text-gray-600 dark:text-gray-400">
+          Напишите мне или свяжитесь через социальные сети.
+        </p>
+        
+        <div class="space-y-3">
+          <UButton
+            label="Email"
+            icon="i-lucide-mail"
+            to="mailto:r.grigorev1502@gmail.com"
+            target="_blank"
+            color="primary"
+            variant="outline"
+            size="lg"
+            class="justify-start"
+          />
+          <br>
+          <UButton
+            label="Telegram"
+            icon="i-simple-icons-telegram"
+            to="https://t.me/redmarci"
+            target="_blank"
+            color="primary"
+            variant="outline"
+            size="lg"
+            class="justify-start"
+          />
+          <br>
+          <UButton
+            label="GitHub"
+            icon="i-simple-icons-github"
+            to="https://github.com/programistro"
+            target="_blank"
+            color="neutral"
+            variant="outline"
+            size="lg"
+            class="justify-start"
+          />
+        </div>
+      </div>
+      
+      <!-- Форма -->
+      <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
+        <UFormField label="Почта" name="email">
+         <UInput v-model="state.email" size="xl" placeholder="your.email@example.com"/>
+        </UFormField>
+
+       <UFormField label="Имя" name="name">
+              <UInput v-model="state.name" type="name" size="xl" placeholder="Ваше имя"/>
+            </UFormField>
+
+          <UFormField label="Телефон" name="phone">
+            <UInput v-model="state.phone" type="tel" size="xl" placeholder="8-999-999-99-99" />
+          </UFormField>
+
+          <UFormField label="Сообщение" name="message" :required="false">
+            <UTextarea v-model="state.message" type="text" placeholder="Напишите мне что-нибудь..." size="xl"/>
+          </UFormField>
+
+         <UButton type="submit" size="lg">
+            Отправить
+          </UButton>
+        </UForm>
+      </div>
+    </UPageSection>
+
+
     <!-- <UPageSection
       v-if="page.blog"
       id="blog"
@@ -169,4 +245,48 @@ useSeoMeta({
   title: page.value.seo.title,
   description: page.value.seo.description
 })
+
+import * as z from 'zod'
+import type { FormSubmitEvent } from '@nuxt/ui'
+
+const schema = z.object({
+  name: z.string().min(2, 'Имя должно быть не менее 2 символов'),
+  email: z.string().email('Неверный формат почты'),
+  message: z.string(),
+  phone: z.string().regex(/^\+7\d{10}$/, 'Неверный формат телефона').optional()
+})
+
+type Schema = z.output<typeof schema>
+
+const state = reactive<Partial<Schema>>({
+  email: undefined,
+  name: undefined,
+  phone: undefined
+})
+
+const toast = useToast()
+async function onSubmit(event: FormSubmitEvent<Schema>) {
+  toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
+  console.log(event.data)
+}
+
+import type { PageLink } from '@nuxt/ui'
+
+const links = ref<PageLink[]>([
+  {
+    label: 'Edit this page',
+    icon: 'i-lucide-file-pen',
+    to: 'https://github.com/nuxt/ui/blob/v4/docs/content/3.components/page-links.md'
+  },
+  {
+    label: 'Star on GitHub',
+    icon: 'i-lucide-star',
+    to: 'https://github.com/nuxt/ui'
+  },
+  {
+    label: 'Releases',
+    icon: 'i-lucide-rocket',
+    to: 'https://github.com/nuxt/ui/releases'
+  }
+])
 </script>
