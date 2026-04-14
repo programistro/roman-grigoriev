@@ -55,40 +55,31 @@
       class="py-0"
     />
 
-     <UMarquee
-      class="py-0 -mx-8 sm:-mx-12 lg:-mx-0 [--duration:30s] gap-0">
-      <Motion
-        v-for="(img, index) in page.hero.skills"
-        :key="index"
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: index * 0.1
-        }"
-      >
-        <UButton
-          :icon="img.icon || 'i-lucide-code'"
-          :label="img.name"
-          color="neutral"
-          variant="outline"
-          size="md"
-        />
-      </Motion>
-    </UMarquee>
+    <UMarquee class="[--duration:30s]">
+  <Motion
+    v-for="(img, index) in page.hero.skills"
+    :key="index"
+    class="mr-0 inline-flex"
+    :initial="{
+       scale: 1.1, opacity: 0, filter: 'blur(20px)' 
+      }"
+    :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+    :transition="{ duration: 0.6, delay: index * 0.1 }"
+  >
+    <UButton
+      :icon="img.icon || 'i-lucide-code'"
+      :label="img.name"
+      color="neutral"
+      variant="outline"
+    />
+  </Motion>
+</UMarquee>
 
     <UMarquee
-      class="py-4 -mx-8 sm:-mx-12 lg:-mx-0 [--duration:30s] gap-0" reverse
+      class="py-4 -mx-8 sm:-mx-12 lg:-mx-0 [--duration:30s]" reverse
     >
       <Motion
+        class="mr-0 inline-flex"
         v-for="(img, index) in page.hero.skills"
         :key="`rev-${index}`"
         :initial="{
@@ -111,7 +102,6 @@
           :label="img.name"
           color="neutral"
           variant="outline"
-          size="md"
         />
       </Motion>
     </UMarquee>
