@@ -2,7 +2,7 @@ seo:
   title: "Fullstack Developer Portfolio - Roman Grigoriev"
   description: "Welcome to my portfolio! I'm Emma Thompson, a UX/UI designer and front-end developer based in Boston. I specialize in creating user-centered digital experiences that are both beautiful and functional."
 title: "Привет, я Роман, Fullstack разработчик!"
-description: "Я создаю веб приложение на Vue js + ASP.NET, а так же мобильные приложения для Android на Kotlin."
+description: "Я создаю веб приложения и API для интернет-магазинов, CRM-систем и админок, а также кросс-платформенные мобилки для фриланс-заказчиков."
 hero:
   links:
     # - label: "Use this template"
@@ -82,8 +82,8 @@ experience:
     - position: "Маркет Эксперт"
       date: "2025 - 2026"
       company:
-        name: Raycast
-        logo: "i-simple-icons-raycast"
+        name: Market Expert
+        logo: "i-simple-icons-boat"
         url: "https://marketexpert.ru/"
         color: "#FF6363"
     - position: "Atlant AI"

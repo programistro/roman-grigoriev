@@ -2,6 +2,6 @@
 
 services:
   roman-front:
-    build: .
+    image: programistro/roman-front:tagname
     ports:
       - "3000:3000"
