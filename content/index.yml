@@ -2,7 +2,7 @@ seo:
   title: "Fullstack Developer Portfolio - Roman Grigoriev"
   description: "Welcome to my portfolio! I'm Emma Thompson, a UX/UI designer and front-end developer based in Boston. I specialize in creating user-centered digital experiences that are both beautiful and functional."
 title: "Привет, я Роман, Fullstack разработчик!"
-description: "Я создаю веб приложения и API для интернет-магазинов, CRM-систем и админок, а также кросс-платформенные мобилки для фриланс-заказчиков."
+description: "Я создаю веб приложения и API для интернет-магазинов, CRM-систем и админок, а также кросс-платформенные мобильные приложения."
 hero:
   links:
     # - label: "Use this template"
@@ -42,14 +42,14 @@ hero:
       icon: "i-simple-icons-csharp"
     - name: "Blazor"
       icon: "i-simple-icons-blazor"
-    - name: "RabbitMq"
+    - name: "RabbitMQ"
       icon: "i-simple-icons-rabbitmq"
     - name: "CI/CD"
       icon: "i-simple-icons-gitlab"
     - name: "Fluent Validation"
     - name: "DDD"
     - name: "DRY"
-    - name: "LNIQ"
+    - name: "LINQ"
     - name: "KISS"
     - name: "SOLID"
       icon: "i-simple-icons-solid"
@@ -68,12 +68,12 @@ hero:
 about:
   title: "Обо мне"
   description: |
-    Я бекенд разработчик с 3 летним комерческим опытом. За это время я успел поработать в нескольких компаниях. Я специализируюсь на разработке высоконагруженных систем и оптимизации производительности.
+    Я бекенд разработчик с 3-летним коммерческим опытом. За это время я успел поработать в нескольких компаниях. Я специализируюсь на разработке высоконагруженных систем и оптимизации производительности.
 experience:
   title: Опыт работы
   items:
     - position: "Фриланс"
-      date: "2023 - Настоящие время"
+      date: "2023 - Настоящее время"
       company:
         name: Kwork
         logo: "i-simple-icons-nuxtdotjs"
