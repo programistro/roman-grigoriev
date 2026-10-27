@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+   ssr: false,
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
@@ -8,6 +9,11 @@ export default defineNuxtConfig({
     'motion-v/nuxt' ,
     '@nuxt/eslint'
   ],
+    compatibilityDate: '2024-04-03',
+
+  future: {
+    compatibilityVersion: 4
+  },
 
  devServer: {
     port: 3003,
@@ -34,4 +40,7 @@ export default defineNuxtConfig({
     }
   }
 
+   app: {
+    baseURL: '/roman-grigoriev/'
+  }
 })
