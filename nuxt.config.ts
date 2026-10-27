@@ -38,7 +38,7 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
-  }
+  },
 
    app: {
     baseURL: '/roman-grigoriev/'
