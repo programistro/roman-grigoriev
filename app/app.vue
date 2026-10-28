@@ -1,10 +1,12 @@
 <script setup>
+const baseURL = useRuntimeConfig().app.baseURL
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: `${baseURL}favicon.ico` }
   ],
   htmlAttrs: {
     lang: 'en'
@@ -34,7 +36,7 @@ onMounted(async () => {
     displayedText.value = fullText.slice(0, i)
     await new Promise(resolve => setTimeout(resolve, typingSpeed))
   }
-  
+
   // Ждём после завершения печати
   await new Promise(resolve => setTimeout(resolve, 1000))
   loading.value = false
@@ -45,7 +47,10 @@ onMounted(async () => {
   <div>
     <!-- Лоадер при загрузке -->
     <Transition name="fade">
-      <div v-if="loading" class="fixed inset-0 z-50 flex items-center justify-center bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm">
+      <div
+        v-if="loading"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm"
+      >
         <div class="flex flex-col items-center gap-6">
           <!-- Печатающийся текст -->
           <div class="text-3xl font-bold text-primary-500">
@@ -56,18 +61,15 @@ onMounted(async () => {
     </Transition>
   </div>
 
-    <UApp>
-
+  <UApp>
     <UHeader>
       <template #left>
         <NuxtLink to="/">
           <!-- <AppLogo class="w-auto h-6 shrink-0" /> -->
-           <UHeaderTitle class="text-lg font-semibold">
+          <UHeaderTitle class="text-lg font-semibold">
             Roman Grigoriev
           </UHeaderTitle>
         </NuxtLink>
-
-        <TemplateMenu />
       </template>
 
       <template #right>
@@ -88,7 +90,7 @@ onMounted(async () => {
       <NuxtPage />
     </UMain>
 
-    <USeparator/>
+    <USeparator />
 
     <UFooter>
       <template #left>

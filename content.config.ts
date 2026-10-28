@@ -16,6 +16,7 @@ const createImageSchema = () => z.object({
 
 const createSkillSchema = () => z.object({
   name: z.string(),
+  icon: z.string().optional()
 })
 
 export default defineContentConfig({
@@ -82,7 +83,7 @@ export default defineContentConfig({
         })
       })
     }),
-    
+
     // Проекты
     projects: defineCollection({
       type: 'data',
@@ -96,7 +97,7 @@ export default defineContentConfig({
         date: z.date()
       })
     }),
-    
+
     // Блог
     blog: defineCollection({
       type: 'page',

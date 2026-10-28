@@ -16,7 +16,7 @@
 
     <UMarquee
       v-if="page.hero.images?.length"
-      
+
       class="py-2 -mx-8 sm:-mx-12 lg:-mx-0 [--duration:40s]"
     >
       <Motion
@@ -56,32 +56,33 @@
     />
 
     <UMarquee class="[--duration:30s]">
-  <Motion
-    v-for="(img, index) in page.hero.skills"
-    :key="index"
-    class="mr-0 inline-flex"
-    :initial="{
-       scale: 1.1, opacity: 0, filter: 'blur(20px)' 
-      }"
-    :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
-    :transition="{ duration: 0.6, delay: index * 0.1 }"
-  >
-    <UButton
-      :icon="img.icon || 'i-lucide-code'"
-      :label="img.name"
-      color="neutral"
-      variant="outline"
-    />
-  </Motion>
-</UMarquee>
+      <Motion
+        v-for="(img, index) in page.hero.skills"
+        :key="index"
+        class="mr-0 inline-flex"
+        :initial="{
+          scale: 1.1, opacity: 0, filter: 'blur(20px)'
+        }"
+        :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+        :transition="{ duration: 0.6, delay: index * 0.1 }"
+      >
+        <UButton
+          :icon="img.icon || 'i-lucide-code'"
+          :label="img.name"
+          color="neutral"
+          variant="outline"
+        />
+      </Motion>
+    </UMarquee>
 
     <UMarquee
-      class="py-4 -mx-8 sm:-mx-12 lg:-mx-0 [--duration:30s]" reverse
+      class="py-4 -mx-8 sm:-mx-12 lg:-mx-0 [--duration:30s]"
+      reverse
     >
       <Motion
-        class="mr-0 inline-flex"
         v-for="(img, index) in page.hero.skills"
         :key="`rev-${index}`"
+        class="mr-0 inline-flex"
         :initial="{
           scale: 1.1,
           opacity: 0,
@@ -173,81 +174,119 @@
       </UCarousel>
     </UPageSection>
 
-
     <UPageSection
       v-if="page.testimonials?.length"
       id="contact"
       title="Связаться со мной"
     >
-    
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <!-- Контакты -->
-      <div class="space-y-4 text-center">
-        <p class="text-gray-600 dark:text-gray-400 whitespace-pre-line">
-          Коннект со мной
-        </p>
-        
-        <div class="space-y-3">
-          <UButton
-            label="Email"
-            icon="i-lucide-mail"
-            to="mailto:r.grigorev1502@gmail.com"
-            target="_blank"
-            color="primary"
-            variant="outline"
-            size="lg"
-            class="mx-auto w-full max-w-xs"
-          />
-          <br>
-          <UButton
-            label="Telegram"
-            icon="i-simple-icons-telegram"
-            to="https://t.me/redmarci"
-            target="_blank"
-            color="primary"
-            variant="outline"
-            size="lg"
-            class="mx-auto w-full max-w-xs"
-          />
-          <br>
-          <UButton
-            label="GitHub"
-            icon="i-simple-icons-github"
-            to="https://github.com/programistro"
-            target="_blank"
-            color="neutral"
-            variant="outline"
-            size="lg"
-            class="mx-auto w-full max-w-xs"
-          />
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Контакты -->
+        <div class="space-y-4 text-center">
+          <p class="text-gray-600 dark:text-gray-400 whitespace-pre-line">
+            Коннект со мной
+          </p>
+
+          <div class="space-y-3">
+            <UButton
+              label="Email"
+              icon="i-lucide-mail"
+              to="mailto:r.grigorev1502@gmail.com"
+              target="_blank"
+              color="primary"
+              variant="outline"
+              size="lg"
+              class="mx-auto w-full max-w-xs"
+            />
+            <br>
+            <UButton
+              label="Telegram"
+              icon="i-simple-icons-telegram"
+              to="https://t.me/redmarci"
+              target="_blank"
+              color="primary"
+              variant="outline"
+              size="lg"
+              class="mx-auto w-full max-w-xs"
+            />
+            <br>
+            <UButton
+              label="GitHub"
+              icon="i-simple-icons-github"
+              to="https://github.com/programistro"
+              target="_blank"
+              color="neutral"
+              variant="outline"
+              size="lg"
+              class="mx-auto w-full max-w-xs"
+            />
+          </div>
         </div>
-      </div>
-      
-      <!-- Форма -->
-      <UForm :schema="schema" :state="state" class="space-y-4 mx-auto max-w-md" @submit="onSubmit">
-        <UFormField label="Почта" name="email">
-         <UInput required v-model="state.email" size="xl" placeholder="your.email@example.com"/>
-        </UFormField>
 
-       <UFormField label="Имя" name="name">
-              <UInput v-model="state.name" type="name" size="xl" placeholder="Ваше имя"/>
-            </UFormField>
-
-          <UFormField label="Телефон" name="phone">
-            <UInput v-model="state.phone" type="tel" size="xl" placeholder="8-999-999-99-99" />
+        <!-- Форма -->
+        <UForm
+          :schema="schema"
+          :state="state"
+          class="space-y-4 mx-auto max-w-md"
+          @submit="onSubmit"
+        >
+          <UFormField
+            label="Почта"
+            name="email"
+          >
+            <UInput
+              v-model="state.email"
+              required
+              size="xl"
+              placeholder="your.email@example.com"
+            />
           </UFormField>
 
-          <UFormField label="Сообщение" name="message" :required="false">
-            <UTextarea v-model="state.message" type="text" placeholder="Напишите мне что-нибудь..." size="xl"/>
+          <UFormField
+            label="Имя"
+            name="name"
+          >
+            <UInput
+              v-model="state.name"
+              type="name"
+              size="xl"
+              placeholder="Ваше имя"
+            />
           </UFormField>
 
-         <UButton type="submit" size="lg">
+          <UFormField
+            label="Телефон"
+            name="phone"
+          >
+            <UInput
+              v-model="state.phone"
+              type="tel"
+              size="xl"
+              placeholder="8-999-999-99-99"
+            />
+          </UFormField>
+
+          <UFormField
+            label="Сообщение"
+            name="message"
+            :required="false"
+          >
+            <UTextarea
+              v-model="state.message"
+              type="text"
+              placeholder="Напишите мне что-нибудь..."
+              size="xl"
+            />
+          </UFormField>
+
+          <UButton
+            type="submit"
+            size="lg"
+          >
             Отправить
           </UButton>
         </UForm>
       </div>
     </UPageSection>
-
 
     <!-- <UPageSection
       v-if="page.blog"
@@ -279,6 +318,9 @@
 
 <script setup lang="ts">
 // Загрузка данных из YAML
+import * as z from 'zod'
+import type { FormSubmitEvent } from '@nuxt/ui'
+
 const { data: page } = await useAsyncData('index', () => {
   return queryCollection('index').first()
 })
@@ -296,9 +338,6 @@ useSeoMeta({
   title: page.value.seo.title,
   description: page.value.seo.description
 })
-
-import * as z from 'zod'
-import type { FormSubmitEvent } from '@nuxt/ui'
 
 // Настройка глобальных сообщений ошибок Zod
 z.setErrorMap((issue, ctx) => {
@@ -331,24 +370,4 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
   console.log(event.data)
 }
-
-import type { PageLink } from '@nuxt/ui'
-
-const links = ref<PageLink[]>([
-  {
-    label: 'Edit this page',
-    icon: 'i-lucide-file-pen',
-    to: 'https://github.com/nuxt/ui/blob/v4/docs/content/3.components/page-links.md'
-  },
-  {
-    label: 'Star on GitHub',
-    icon: 'i-lucide-star',
-    to: 'https://github.com/nuxt/ui'
-  },
-  {
-    label: 'Releases',
-    icon: 'i-lucide-rocket',
-    to: 'https://github.com/nuxt/ui/releases'
-  }
-])
 </script>
