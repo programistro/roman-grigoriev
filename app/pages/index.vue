@@ -336,7 +336,11 @@ if (!page.value) {
 // SEO метаданные
 useSeoMeta({
   title: page.value.seo.title,
-  description: page.value.seo.description
+  description: page.value.seo.description,
+  ogTitle: page.value.seo.title,
+  ogDescription: page.value.seo.description,
+  twitterTitle: page.value.seo.title,
+  twitterDescription: page.value.seo.description
 })
 
 // Настройка глобальных сообщений ошибок Zod

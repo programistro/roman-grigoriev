@@ -8,6 +8,12 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'motion-v/nuxt'
   ],
+
+  $production: {
+    app: {
+      baseURL: '/roman-grigoriev/'
+    }
+  },
   ssr: true,
 
   devtools: {
@@ -15,7 +21,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: '/roman-grigoriev/'
+    baseURL: '/'
   },
 
   css: ['~/assets/css/main.css'],

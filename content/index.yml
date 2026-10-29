@@ -1,6 +1,6 @@
 seo:
-  title: "Fullstack Developer Portfolio - Roman Grigoriev"
-  description: "Welcome to my portfolio! I'm Emma Thompson, a UX/UI designer and front-end developer based in Boston. I specialize in creating user-centered digital experiences that are both beautiful and functional."
+  title: "Roman Grigoriev — Fullstack Developer"
+  description: "Портфолио Романа Григорьева: веб-приложения и API для интернет-магазинов, CRM-систем и админок, а также кросс-платформенные мобильные приложения."
 title: "Привет, я Роман, Fullstack разработчик!"
 description: "Я создаю веб приложения и API для интернет-магазинов, CRM-систем и админок, а также кросс-платформенные мобильные приложения."
 hero:
@@ -24,8 +24,14 @@ hero:
   skills:
     - name: "ASP.NET"
       icon: "i-simple-icons-dotnet"
+    - name: "Avalonia"
+      icon: "i-simple-icons-avaloniaui"
     - name: "Kotlin"
       icon: "i-simple-icons-kotlin"
+    - name: "Jetpack Compose"
+      icon: "i-simple-icons-jetpackcompose"
+    - name: "Kubernetes"
+      icon: "i-simple-icons-kubernetes"
     - name: "Apache"
       icon: "i-simple-icons-apache"
     - name: "Minio"
@@ -34,6 +40,8 @@ hero:
       icon: "i-simple-icons-android"
     - name: "Git"
       icon: "i-simple-icons-git"
+    - name: "Gitlab"
+      icon: "i-simple-icons-gitlab"
     - name: "Nginx"
       icon: "i-simple-icons-nginx"
     - name: "Docker"
@@ -65,6 +73,10 @@ hero:
       icon: "i-simple-icons-css3"
     - name: "Tailwind"
       icon: "i-simple-icons-tailwindcss"
+    - name: "Deepseek"
+      icon: "i-simple-icons-deepseek"
+    - name: "Claude"
+      icon: "i-simple-icons-claude"
 about:
   title: "Обо мне"
   description: |

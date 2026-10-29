@@ -9,20 +9,27 @@ useHead({
     { rel: 'icon', href: `${baseURL}favicon.ico` }
   ],
   htmlAttrs: {
-    lang: 'en'
+    lang: 'ru'
   }
 })
 
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
+const siteUrl = 'https://programistro.github.io'
+const ogImage = `${siteUrl}${baseURL.replace(/\/$/, '')}/og-image.png`
+const title = 'Roman Grigoriev — Fullstack Developer'
+const description = 'Портфолио Романа Григорьева: веб-приложения и API для интернет-магазинов, CRM-систем и админок, а также кросс-платформенные мобильные приложения.'
 
 useSeoMeta({
   title,
   description,
+  ogType: 'website',
   ogTitle: title,
   ogDescription: description,
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
-  twitterCard: 'summary_large_image'
+  ogImage,
+  ogImageAlt: 'Roman Grigoriev — Fullstack Developer',
+  twitterCard: 'summary_large_image',
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: ogImage
 })
 
 const loading = ref(true)
